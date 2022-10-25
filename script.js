@@ -3,17 +3,17 @@ const dbFile = require("./db");
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const all = require("./routes/route/all");
 const add = require("./routes/models/Schema");
-
+const cors = require("cors");
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/", add);
 
 app.use("/", add);
 app.get("/", (req, res) => {
-  res.end("bienvenidos");
+  res.end("Welcome");
 });
 app.listen(5000, function () {
-  console.log("esta corriendo");
+  console.log("its ON");
 });

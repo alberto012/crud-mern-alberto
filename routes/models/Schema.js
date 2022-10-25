@@ -6,14 +6,16 @@ const router = express.Router();
 const data = new mongoose.Schema({
   typeOfAnimal: {
     type: String,
+    values: ["Novillo", "Toro", "Vaquillona"],
     required: true,
     lowercase: true,
   },
   weight: {
-    type: Number,
+    type: String,
     required: true,
   },
   typeOfDevice: {
+    values: ["Collar", "Caravana"],
     type: String,
     required: true,
     lowercase: true,
